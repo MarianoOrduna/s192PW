@@ -2,9 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*  Route::get('/', function () {
+//ruta tipo get
+/* Route::get('/', function () {
     return view('welcome');
 }); */
 
-Route::view('/', 'welcome');
-Route::view('/form', 'formulario');
+//ruta tipo view
+Route::view('inicio', 'inicio') ->name ("inicio");
+
+Route::view('form', 'formulario') ->name ('formulario');
+
+Route::view('client', 'clientes') ->name ('clientes');
