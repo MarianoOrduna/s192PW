@@ -10,18 +10,10 @@ class Repaso extends Controller
     {
         return view('repaso'); 
     }
-
     public function convertir(Request $request)
     {
         $value = $request->input('value');
         $conversion = $request->input('conversion');
-
-        
-        if (!is_numeric($value) || $value <= 0) {
-            return back()->with('result', 'Por favor, introduce un número válido.');
-        }
-
-        
         $result = '';
         switch ($conversion) {
             case 'MBtoGB':
@@ -39,8 +31,6 @@ class Repaso extends Controller
             default:
                 $result = 'Conversión no válida.';
         }
-
-       
         return ($result);
     }
 }

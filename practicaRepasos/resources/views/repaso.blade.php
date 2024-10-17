@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Convertidor de Unidades</title>
+    <title>Convertidor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -53,7 +53,7 @@
 <body>
 
 <div class="container">
-    <h1>Convertidor de Unidades</h1>
+    <h1>Convertidor</h1>
     <form action="repaso" method="POST">
         @csrf
         <label for="value">Introduce el valor:</label>
@@ -69,12 +69,6 @@
 
         <button class="btn" type="submit">Convertir</button>
     </form>
-
-    @if(session('result'))
-        <div class="result">
-            {{ session('result') }}
-        </div>
-    @endif
 </div>
 
 </body>
