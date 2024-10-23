@@ -20,7 +20,24 @@ class controladorVistas extends Controller
     }
 
     public function procesarCliente(Request $peticion){
-        /* return 'La informacion del cliente llego al controlador'; */
+
+$validated= $peticion->validate([
+    'txtnombre'=>'required|min:3|max:25',
+    'txtapellido'=>'required|min:3|max:25',
+    'txtcorreo'=>'required|email:rfc,dns',
+    'txttelefono'=>'required|numeric',
+ ]);
+
+
+
+       //redireccion con valores
+$usuario= $peticion->input("txtnombre");
+session()->flash('exito','Se guardo el usuario'.$usuario);
+return to_route('rutaform');
+}
+}
+
+ /* return 'La informacion del cliente llego al controlador'; */
         /* return $peticion->all(); */
 
         /* return $peticion->path(); */
@@ -29,9 +46,3 @@ class controladorVistas extends Controller
 /* return redirection('/'); */
 /* return redirect()->route('rutaclientes'); */
 /* return back(); */
-$usuario= $peticion->input("txtnombre");
-session()->flash('exito','Se guardo el usuario'.$usuario);
-return to_route('rutaform');
-}
-}
-
