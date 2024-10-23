@@ -23,7 +23,6 @@
         <p>122043964</p>
         <p>Programacion web</p>
         <a href="repaso" class="btn btn-primary">Repaso1</a>
-    
     </div>
 </body>
 </html>

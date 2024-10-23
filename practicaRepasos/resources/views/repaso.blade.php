@@ -66,7 +66,6 @@
             <option value="GBtoTB">GB a TB</option>
             <option value="TBtoGB">TB a GB</option>
         </select>
-
         <button class="btn" type="submit">Convertir</button>
     </form>
 </div>
