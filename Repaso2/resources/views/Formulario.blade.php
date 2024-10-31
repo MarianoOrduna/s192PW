@@ -16,12 +16,10 @@
     </style>
 </head>
 <body>
-    <div class="d-flex flex-column justify-content-center align-items-center text-center full-height">
-        <h1 class="display-1">Biblioteca</h1>
-        <p>Presione para inciar......</p>
-        <!-- <a href="/form" class="btn btn-primary">Ir al Registro</a> -->
-        <a href="{{ route('Formulario') }}" class="btn btn-primary">Ir al Registro</a>
-   
-    </div>
+<div class="mb-3">
+                    <label for="nombre" class="form-label">{{__('Nombre')}} </label>
+                    <input type="text" class="form-control" name="txtnombre" value="{{old('txtnombre')}}">
+                    <small class='fst-italic text-danger'>{{$errors->first('txtnombre')}}</small>
+                  </div>
 </body>
 </html>
