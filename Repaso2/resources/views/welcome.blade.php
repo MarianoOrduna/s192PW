@@ -79,12 +79,12 @@
 
     
     <header>
-        <h1>Noticia Literaria</h1>
+        <h1>{{ __('Noticia Literaria') }}</h1>
     </header>
 
    
     <div class="container">
-        <h2 class="news-title">Los poetas malditos</h2>
+        <h2 class="news-title">{{ __('Los Poetas Malditos') }}</h2>
         <img src="https://i0.wp.com/img.culturacolectiva.com/content/2016/03/poetas-malditos.jpg?ssl=1" alt="Poetas Malditos" class="news-image">
         <div class="news-content">
             <p><strong>Fecha:</strong> 31 de octubre de 2024</p>

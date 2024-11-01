@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
         <div>
-            <a href="{{ route('inicio') }}">Principal</a>
+            <a href="{{ route('inicio') }}">{{__('Principal')}}</a>
             <a href="{{ route('Formulario') }}">{{__('Registro de libro')}}</a>
             
         </div>

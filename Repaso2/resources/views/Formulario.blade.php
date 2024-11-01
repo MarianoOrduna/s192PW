@@ -132,7 +132,7 @@
 </script>
 @endsession
         <div class="form-container">
-            <h2 class="form-title">Formulario de Libro</h2>
+            <h2 class="form-title">{{ __('Formulario de Libro') }}</h2>
 
             <form action="{{ route('validar') }}" method="POST">
                 @csrf
@@ -179,7 +179,7 @@
                     <small class="fst-italic">{{ $errors->first('txtemail') }}</small>
                 </div>
 
-                <button type="submit" class="submit-btn">Enviar</button>
+                <button type="submit" class="submit-btn">{{ __('Enviar') }}</button>
             </form>
         </div>
     </div>
