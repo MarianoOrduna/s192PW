@@ -87,7 +87,7 @@
         <h2 class="news-title">{{ __('Los Poetas Malditos') }}</h2>
         <img src="https://i0.wp.com/img.culturacolectiva.com/content/2016/03/poetas-malditos.jpg?ssl=1" alt="Poetas Malditos" class="news-image">
         <div class="news-content">
-            <p><strong>Fecha:</strong> 31 de octubre de 2024</p>
+            <p><strong>Fecha:</strong> 31 de oct de 2024</p>
             <p>"Los poetas malditos" es un término que se refiere a un grupo de poetas franceses del siglo XIX y principios del XX que compartían características comunes en su obra y en su vida personal, siendo asociados con la bohemia, el sufrimiento y la búsqueda de la verdad a través de la poesía. Este término se popularizó gracias al libro del poeta Paul Verlaine, que lleva el mismo nombre, publicado en 1884.</p>
             <p><strong>Principales poetas malditos</strong></p>
             <p>Charles Baudelaire: Considerado uno de los precursores del simbolismo y del modernismo, su obra "Las flores del mal" aborda temas de la belleza, la decadencia y la muerte.</p>
@@ -109,6 +109,4 @@
 
 </body>
 </html>
-
-
 @endsection('contenido')
