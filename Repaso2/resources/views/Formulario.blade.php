@@ -16,6 +16,9 @@
     </style>
 </head>
 <body>
+@extends('layouts.plantilla1')
+@section('titulo','Formulario')
+@section('contenido')
 <div class="mb-3">
                     <label for="nombre" class="form-label">{{__('Nombre')}} </label>
                     <input type="text" class="form-control" name="txtnombre" value="{{old('txtnombre')}}">
@@ -57,5 +60,4 @@
                     <input type="text" class="form-control" name="txtnombre" value="{{old('txtnombre')}}">
                     <small class='fst-italic text-danger'>{{$errors->first('txtnombre')}}</small>
                   </div>
-</body>
-</html>
+@endsection('contenido')

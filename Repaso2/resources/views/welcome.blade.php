@@ -15,6 +15,9 @@
         }
     </style>
 </head>
+@extends('layouts.plantilla1')
+@section('titulo','Formulario')
+@section('contenido')
 <body>
     <div class="d-flex flex-column justify-content-center align-items-center text-center full-height">
         <h1 class="display-1">Biblioteca</h1>
@@ -22,6 +25,7 @@
         <!-- <a href="/form" class="btn btn-primary">Ir al Registro</a> -->
         <a href="{{ route('Formulario') }}" class="btn btn-primary">Ir al Registro</a>
    
-    </div>
+    
 </body>
 </html>
+@endsection('contenido')
