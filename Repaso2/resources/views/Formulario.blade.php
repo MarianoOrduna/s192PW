@@ -16,7 +16,6 @@
             flex-direction: column;
         }
 
-        /* Estilos de la barra de navegación */
         nav {
             background-color: #343a40;
             color: #fff;
@@ -36,7 +35,6 @@
             text-decoration: underline;
         }
 
-        /* Contenedor del formulario */
         .form-container {
             background-color: #ffffff;
             padding: 30px;
@@ -44,8 +42,8 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
-            margin: auto; /* Centra el contenedor */
-            margin-top: 50px; /* Espacio superior */
+            margin: auto;
+            margin-top: 50px; 
         }
 
         .form-title {
@@ -101,72 +99,88 @@
             background-color: #218838;
         }
 
-        /* Estilos del pie de página */
         footer {
             background-color: #343a40;
             color: #fff;
             text-align: center;
             padding: 10px;
-            margin-top: auto; /* Empuja el pie de página hacia abajo */
+            margin-top: auto;
         }
     </style>
 </head>
+
 <body>
 @extends('layouts.plantilla1')
-@section('titulo','Formulario')
+@section('titulo', 'Formulario')
 @section('contenido')
-   
-    <div class="form-container">
-        <h2 class="form-title">Formulario de Libro</h2>
 
-        <form action="/validarLibro" method="POST">
-            @csrf
+    <div class="container mt-5 col-md-6">
+        @if (session('exito'))
+            <div class="alert alert-success" role="alert">
+                {{ session('exito') }}
+            </div>
+        @endif
+        @session('exito')
+        <script>Swal.fire({
+  title: "Libro Registrado",
+  text: "Registro con exito.",
+  imageUrl: "https://cdn.prod.website-files.com/64647a41533042ad6b35e9e4/64647a42533042ad6b35eaec_Group%2011.svg",
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: "Custom image"
+});
+</script>
+@endsession
+        <div class="form-container">
+            <h2 class="form-title">Formulario de Libro</h2>
 
-        <div class="mb-3">
-            <label for="nombre" class="form-label">{{__('ISBN')}}</label>
-            <input type="text" class="form-control" name="txtISBN" value="{{old('txtISBN')}}">
-            <small class="fst-italic">{{$errors->first('txtISBN')}}</small>
+            <form action="{{ route('validar') }}" method="POST">
+                @csrf
+
+                <div class="mb-3">
+                    <label for="txtISBN" class="form-label">{{ __('ISBN') }}</label>
+                    <input type="text" class="form-control" name="txtISBN" value="{{ old('txtISBN') }}">
+                    <small class="fst-italic">{{ $errors->first('txtISBN') }}</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="txttitulo" class="form-label">{{ __('Titulo') }}</label>
+                    <input type="text" class="form-control" name="txttitulo" value="{{ old('txttitulo') }}">
+                    <small class="fst-italic">{{ $errors->first('txttitulo') }}</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="txtautor" class="form-label">{{ __('Autor') }}</label>
+                    <input type="text" class="form-control" name="txtautor" value="{{ old('txtautor') }}">
+                    <small class="fst-italic">{{ $errors->first('txtautor') }}</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="txtpaginas" class="form-label">{{ __('Paginas') }}</label>
+                    <input type="text" class="form-control" name="txtpaginas" value="{{ old('txtpaginas') }}">
+                    <small class="fst-italic">{{ $errors->first('txtpaginas') }}</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="txtano" class="form-label">{{ __('Año') }}</label>
+                    <input type="text" class="form-control" name="txtano" value="{{ old('txtano') }}">
+                    <small class="fst-italic">{{ $errors->first('txtano') }}</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="txteditorial" class="form-label">{{ __('Editorial') }}</label>
+                    <input type="text" class="form-control" name="txteditorial" value="{{ old('txteditorial') }}">
+                    <small class="fst-italic">{{ $errors->first('txteditorial') }}</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="txtemail" class="form-label">{{ __('Email de Editorial') }}</label>
+                    <input type="email" class="form-control" name="txtemail" value="{{ old('txtemail') }}">
+                    <small class="fst-italic">{{ $errors->first('txtemail') }}</small>
+                </div>
+
+                <button type="submit" class="submit-btn">Enviar</button>
+            </form>
         </div>
-
-        <div class="mb-3">
-            <label for="titulo" class="form-label">{{__('Titulo')}}</label>
-            <input type="text" class="form-control" name="txttitulo" value="{{old('txttitulo')}}">
-            <small class="fst-italic">{{$errors->first('txttitulo')}}</small>
-        </div>
-
-        <div class="mb-3">
-            <label for="autor" class="form-label">{{__('Autor')}}</label>
-            <input type="text" class="form-control" name="txtautor" value="{{old('txtautor')}}">
-            <small class="fst-italic">{{$errors->first('txtautor')}}</small>
-        </div>
-
-        <div class="mb-3">
-            <label for="paginas" class="form-label">{{__('Paginas')}}</label>
-            <input type="text" class="form-control" name="txtpaginas" value="{{old('txtpaginas')}}">
-            <small class="fst-italic">{{$errors->first('txtpaginas')}}</small>
-        </div>
-
-        <div class="mb-3">
-            <label for="ano" class="form-label">{{__('Año')}}</label>
-            <input type="text" class="form-control" name="txtano" value="{{old('txtano')}}">
-            <small class="fst-italic">{{$errors->first('txtano')}}</small>
-        </div>
-
-        <div class="mb-3">
-            <label for="editorial" class="form-label">{{__('Editorial')}}</label>
-            <input type="text" class="form-control" name="txteditorial" value="{{old('txteditorial')}}">
-            <small class="fst-italic">{{$errors->first('txteditorial')}}</small>
-        </div>
-
-        <div class="mb-3">
-            <label for="email" class="form-label">{{__('Email de Editorial')}}</label>
-            <input type="email" class="form-control" name="txtemail" value="{{old('txtemail')}}">
-            <small class="fst-italic">{{$errors->first('txtemail')}}</small>
-        </div>
-
-        <button type="submit" class="submit-btn">Enviar</button>
     </div>
-   
 @endsection
-</body>
-</html>

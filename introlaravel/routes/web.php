@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\controladorVistas;
+
+use App\Http\Controllers\ControladorVistas;
 
 Route::get('/', [controladorVistas::class,'home'])->name('rutainicio');
 Route::get('/form', [controladorVistas::class,'formulario'])->name('rutaform');

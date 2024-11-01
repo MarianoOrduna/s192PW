@@ -23,9 +23,11 @@ class validaciones extends FormRequest
     {
         return [
     'txtISBN'=>'required|numeric|min:13',
+    'txtautor'=>'required',
     'txttitulo'=>'required|max:150',
-    'txtpaginas'=>'required|interger|min:1',
-    'txtano'=>'required|interger|min:1',
+    'txtpaginas'=>'required|integer|min:1',
+    'txtano'=>'required|integer|min:1',
+    'txteditorial'=>'required|',
     'txtemail'=>'required|email'
         ];
     }

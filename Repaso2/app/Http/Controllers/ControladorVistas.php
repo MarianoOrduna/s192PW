@@ -1,15 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\ValidarLibros;
+
+use App\Http\Requests\Validaciones; 
 use Illuminate\Http\Request;
 
 class ControladorVistas extends Controller
-
 {
-    public function ValidarLibros(ValidarLibros $peticionValidada){
- $libro= $peticionValidada->input("txtISBN");
- session()->flash('exito','Se guardo el usuario'.$libro);
- return to_route('Formulario');
- }
+    
+    public function formulario()
+    {
+        return view('Formulario'); 
+    }
+
+   
+    public function ValidarLibros(Validaciones $peticionValidada)
+    {
+        $libro = $peticionValidada->input("txtISBN");
+        session()->flash('exito', 'Se guardo el libro'. $libro);
+        return to_route('Formulario');
+    }
 }
