@@ -118,10 +118,14 @@
    
     <div class="form-container">
         <h2 class="form-title">Formulario de Libro</h2>
+
+        <form action="/validarLibro" method="POST">
+            @csrf
+
         <div class="mb-3">
             <label for="nombre" class="form-label">{{__('ISBN')}}</label>
-            <input type="text" class="form-control" name="txtnombre" value="{{old('txtnombre')}}">
-            <small class="fst-italic">{{$errors->first('txtnombre')}}</small>
+            <input type="text" class="form-control" name="txtISBN" value="{{old('txtISBN')}}">
+            <small class="fst-italic">{{$errors->first('txtISBN')}}</small>
         </div>
 
         <div class="mb-3">
