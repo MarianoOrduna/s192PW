@@ -16,7 +16,7 @@ class peticiones extends Controller
     {
         $usuario = $peticionValidada->input("txtcorreo");
         session()->flash('exito', 'Se guardo el usuario'. $usuario);
-        return to_route('formUsuario');
+        return to_route('formUsuarios');
     }
 }
 

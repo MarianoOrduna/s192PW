@@ -8,7 +8,8 @@
     @vite(['resources/js/app.js'])
 </head>
 <body>
-@if (session('exito'))
+<div class="container mt-5 col-md-6">
+        @if (session('exito'))
             <div class="alert alert-success" role="alert">
                 {{ session('exito') }}
             </div>
@@ -24,12 +25,13 @@
 });
 </script>
 @endsession
+<form action="{{ route('validar') }}" method="POST">
+    @csrf
     <h1 class="text-center text-primary mt-5 mb-4">Registro de usuarios</h1>
 
     <div class="container  col-md-4">
 
-    <form action="{{ route('validar') }}" method="POST">
-    @csrf
+    
     <form>
 
         <div class="mb-3">

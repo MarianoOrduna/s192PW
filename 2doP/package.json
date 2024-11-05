@@ -16,7 +16,9 @@
     },
     "dependencies": {
         "@popperjs/core": "^2.11.8",
+        "alert": "^6.0.2",
         "bootstrap": "^5.3.3",
+        "components": "^0.1.0",
         "migration": "^0.3.0"
     }
 }
