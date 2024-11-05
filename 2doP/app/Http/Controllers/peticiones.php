@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request\validaciones;
+use App\Http\Requests\Validarusuarios;
+use Illuminate\Http\Request;
 
 class peticiones extends Controller
 {
@@ -12,9 +12,9 @@ class peticiones extends Controller
     }
 
    
-    public function Validarusuarios(validaciones $peticionValidada)
+    public function Validarusuarios(Validarusuarios $peticionValidada)
     {
-        $usuario = $peticionValidada->input("txtISBN");
+        $usuario = $peticionValidada->input("txtcorreo");
         session()->flash('exito', 'Se guardo el usuario'. $usuario);
         return to_route('formUsuario');
     }
