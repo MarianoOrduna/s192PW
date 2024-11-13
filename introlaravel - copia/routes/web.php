@@ -1,23 +1,22 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ControladorVistas;
-use App\Http\Controllers\clienteController;
-//controlador vistas
-Route::get('/', [controladorVistas::class,'home'])->name('rutainicio');
 
+use App\Http\Controllers\ControladorVistas;
+
+Route::get('/', [controladorVistas::class,'home'])->name('rutainicio');
+Route::get('/form', [controladorVistas::class,'formulario'])->name('rutaform');
 Route::get('/client', [controladorVistas::class,'consulta'])->name('rutaclientes');
 Route::view('componentes', 'componentes')->name('rutacomponentes');
 Route::post('/enviarCliente', [controladorVistas::class,'procesarCliente'])->name('rutaEnviar');
 
-//controlador cliente
 
-Route::get('/cliente/create',[clienteController::class,'create'])->name('rutaform');
 
-Route::post('/cliente',[clienteController::class,'store'])->name('enviarCliente');
 
-/* La ruta tipo post que se escribe clinete, que mande a clienteController en la funcion store
-Ver que este la importacion del controlador */
+
+
+
+
 
 
 //ruta tipo get

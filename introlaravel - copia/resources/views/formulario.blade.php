@@ -29,8 +29,7 @@
               </div>
               <div class="card-body text-justify">
                 
-                <form action="{{ route('enviarCliente') }}" method="POST"> 
-                  <!-- //usar bien el action, este formulario manda a la ruta -->
+                <form action="/enviarCliente" method="POST">
 
                   @csrf 
 

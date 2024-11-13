@@ -12,7 +12,7 @@ class controladorVistas extends Controller
     }
 
     public function formulario(){
-        /* return view('formulario'); */
+        return view('formulario');
     }
 
 
