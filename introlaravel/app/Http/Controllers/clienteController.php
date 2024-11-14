@@ -12,12 +12,15 @@ class clienteController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * 
+     * Nos sirve para la consulta del crud
      */
     public function index()
     {
-        //
+        $consultaClientes= DB::table('clientes')->get();
+        return view('clientes',compact('consultaClientes'));
     }
-
+/* Hay que usar la tabla correcta, el nombre de la vista y el compact */
     /**
      * Show the form for creating a new resource.
      */

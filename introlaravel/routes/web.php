@@ -6,7 +6,7 @@ use App\Http\Controllers\clienteController;
 //controlador vistas
 Route::get('/', [controladorVistas::class,'home'])->name('rutainicio');
 
-Route::get('/client', [controladorVistas::class,'consulta'])->name('rutaclientes');
+
 Route::view('componentes', 'componentes')->name('rutacomponentes');
 Route::post('/enviarCliente', [controladorVistas::class,'procesarCliente'])->name('rutaEnviar');
 
@@ -15,6 +15,7 @@ Route::post('/enviarCliente', [controladorVistas::class,'procesarCliente'])->nam
 Route::get('/cliente/create',[clienteController::class,'create'])->name('rutaform');
 
 Route::post('/cliente',[clienteController::class,'store'])->name('enviarCliente');
+Route::get('/client', [clienteController::class,'index'])->name('rutaclientes');
 
 /* La ruta tipo post que se escribe clinete, que mande a clienteController en la funcion store
 Ver que este la importacion del controlador */
