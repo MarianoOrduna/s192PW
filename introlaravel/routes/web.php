@@ -17,6 +17,9 @@ Route::get('/cliente/create',[clienteController::class,'create'])->name('rutafor
 Route::post('/cliente',[clienteController::class,'store'])->name('enviarCliente');
 Route::get('/client', [clienteController::class,'index'])->name('rutaclientes');
 
+Route::get('/clientes/{id}/edit', [clienteController::class,'edit'])->name('rutaedit');
+
+
 /* La ruta tipo post que se escribe clinete, que mande a clienteController en la funcion store
 Ver que este la importacion del controlador */
 
