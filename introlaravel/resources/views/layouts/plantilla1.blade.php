@@ -28,5 +28,6 @@
           </ul>
     </nav>
     @yield('contenido')
+    @yield('contenidoEdicion')
 </body>
 </html>

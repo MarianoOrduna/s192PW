@@ -59,9 +59,10 @@ return to_route('rutaform');
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit( $id)
     {
-        //
+        $cliente = DB::table('clientes')->where('id',$id)->first();
+        return view('editar',compact('cliente'));
     }
 
     /**
