@@ -17,9 +17,9 @@ Route::get('/cliente/create',[clienteController::class,'create'])->name('rutafor
 Route::post('/cliente',[clienteController::class,'store'])->name('enviarCliente');
 Route::get('/client', [clienteController::class,'index'])->name('rutaclientes');
 
-Route::get('/clientes/{id}/edit', [clienteController::class,'edit'])->name('rutaedit');
-Route::put('/clientes/{id}/edit', [clienteController::class,'update'])->name('actualizarCliente');
-Route::delete('/clientes/{id}/edit', [clienteController::class,'destroy'])->name('eliminarCliente');
+Route::get('/clientes/{id}/edit', [clienteController::class,'edit'])->name('rutaEdit');
+Route::put('/clientes/{id}', [clienteController::class,'update'])->name('cliente.update');
+Route::delete('/clientes/{id}', [clienteController::class,'destroy'])->name('cliente.destroy');
 
 /* La ruta tipo post que se escribe clinete, que mande a clienteController en la funcion store
 Ver que este la importacion del controlador */
